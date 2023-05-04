@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Vue를 사용하기 위한 준비 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <!-- 
+        v-model은 중국어, 일본어, 한국어의 경우 v-model이 업데이트 되지 않는다.
+        해결방법 : input 이벤트를 활용 
+    -->
+    <div id="app">
+        <input type="text" v-model="msg" placeholder="검색어를 입력하세요">
+        <!-- trim 수식어-->
+        <input type="text" v-model.trim="msg" placeholder="검색어를 입력하세요">
+        <button v-show="msg.trim().length !== 0">검색</button>
+    </div>
+    <script>
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                msg: ''
+            }
+        });
+    </script>
+</body>
+
+</html>

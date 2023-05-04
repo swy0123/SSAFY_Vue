@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <h2>template 태그 사용하기</h2>
+    <div id="app">
+        <template v-if="show">
+            <h2>여러개의 태그를 묶어서 처리해야 한다면??</h2>
+            <h2>template 태그를 사용해 보자</h2>
+            <h2>조건에 따라서 보이고 안보이고를 정할 수 있다.</h2>
+        </template>
+        <template v-for="(region, index) in ssafy">
+            <h2>지역 : {{region.name}}</h2>
+            <h3>{{region.count}}개반</h3>
+        </template>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                count: 0,
+                show: false,
+                ssafy: [{
+                        name: "광주",
+                        count: 2
+                    },
+                    {
+                        name: "구미",
+                        count: 2
+                    },
+                    {
+                        name: "대전",
+                        count: 3
+                    },
+                    {
+                        name: "서울",
+                        count: 9
+                    }
+                ]
+            }
+        })
+    </script>
+</body>
+
+</html>
