@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <button v-on:click="greet1('VueJS')">Greet</button>
+        <button v-on:click="greet2($event, 'VueJS')">Greet</button>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            methods: {
+                greet1: function (msg) {
+                    alert('Hello ' + msg + '!')
+                    console.dir(event.target)
+                },
+                greet2: function (e, msg) {
+                    alert('Hello ' + msg + '!')
+                    console.dir(e.target)
+                    console.dir(event.target)
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div>데이터 : {{message}}</div>
+        <div>메서드 : {{enInsa()}}</div>
+        <div>메서드 : {{koInsa()}}</div>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                message: "Hello 싸피"
+            },
+            methods: {
+                enInsa() {
+                    return "Hello SSAFY"
+                },
+                koInsa() {
+                    return "안녕 싸피"
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

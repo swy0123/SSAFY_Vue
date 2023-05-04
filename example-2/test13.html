@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <title>Hello Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style type="text/css">
+        .completed {
+            text-decoration: line-through;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body class="container-fluid">
+    <div id="app">
+        <ul>
+            <li :class="{completed: todo.done}" :style="myStyle" v-for="todo in todos">
+                {{todo.msg}}
+                <button @click="complete(todo)" class="btn">
+                    완료
+                </button>
+            </li>
+        </ul>
+    </div>
+</body>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            todos: [{
+                    msg: "5시간 잠자기",
+                    done: false
+                },
+                {
+                    msg: "알고리즘 1시간 공부하기",
+                    done: false
+                },
+                {
+                    msg: "Vue 1시간 공부하기",
+                    done: false
+                },
+            ],
+            myStyle: {
+                fontSize: '25px'
+            }
+        },
+        methods: {
+            complete: function (todo) {
+                todo.done = !todo.done;
+            }
+        },
+    });
+</script>
+
+</html>

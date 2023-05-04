@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div>{{count}}</div>
+        <button @click="press1">눌러주세요1</button>
+        <button @click="press2">눌러주세요2</button>
+        <button @click="press3">눌러주세요3</button>
+    </div>
+
+    <script type="text/javascript">
+        var vue = new Vue({
+            el: '#app',
+            data: {
+                count: 0
+            },
+            methods: {
+                press1: function () {
+                    console.log("press1........");
+                    //this.count++;
+                    // this 는 vue
+                    this.$data.count++;
+                    //thid$el
+                    console.log(this);
+                },
+                press2: () => {
+                    console.log("press2........");
+                    // this 는 window
+                    this.count++;
+                    vue.count++;
+                    console.log(this);
+                },
+                press3() {
+                    console.log("press3........");
+                    // this vue
+                    this.count++;
+                    // vue.count++;
+                    console.log(this);
+                }
+            },
+        });
+    </script>
+</body>
+
+</html>

@@ -10,28 +10,21 @@
 
 <body>
     <div id="app">
-        <!-- <input type="text" v-bind:value="msg" v-on:input="changeMsg"> -->
-        <input type="text" :value="msg" v-on:input="changeMsg">
-        <h1 v-text="msg"></h1>
-        <h1 v-html="msg"></h1>
-        <h1 type="text">{{msg}}</h1>
+        <button v-on:click="greet">Greet</button>
     </div>
     <script>
-        new Vue(
-            
-        {
+        new Vue({
             el: '#app',
             data: {
-                msg: 'gggg'
+                name: 'Vue.js'
             },
             methods: {
-                changeMsg(event) {
-                    this.msg = event.target.value;
+                greet: function (event) {
+                    alert('Hello ' + this.name + '!')
+                    console.dir(event.target)
                 }
             }
-        }
-        
-        );
+        })
     </script>
 </body>
 
