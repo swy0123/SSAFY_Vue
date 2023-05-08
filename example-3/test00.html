@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+
+
+<body>
+    <div id="first">
+        <div v-text="title"></div>
+        <div>{{testFunction()}}</div>
+        <div>{{testFuction2()}}</div>
+        <div>{{testFuction3()}}</div>
+        <div>{{testFuction4()}}</div>
+        <hello-ssafy></hello-ssafy>
+
+    </div>
+
+    <script>
+        Vue.component('HelloSsafy', {
+            template: '<h2>{{title}}</h2>',
+            data() {
+                return {
+                    title: 'MyComponent1111',
+                }
+            }
+        });
+
+
+        var vm = new Vue({
+            el: '#first',
+            data() {
+                return {
+                    title: 'hello ssafy',
+                }
+            },
+            methods: {
+                testFunction: function () {
+                    console.log('testFunction');
+                    console.log(this);
+                },
+                testFuction3() {
+                    console.log('testFunction3');
+                    console.log(this);
+                },
+
+                testFuction2: () => {
+                    console.log('testFunction2');
+                    console.log(this);
+                },
+                testFuction4: function () {
+                    console.log('testFunction4');
+                    setInterval(() => {
+                        console.log(this);
+                    }, 3000);
+                },
+
+            },
+        });
+
+    </script>
+
+</body>
+
+</html>
+
+class Hello {
+main(){
+
+}
+
+void print(){
+this
+}
+
+
+}
